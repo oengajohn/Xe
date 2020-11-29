@@ -6,7 +6,7 @@ Ext.define('Xe.view.menu.Tree', {
         'Xe.store.MenuTreeStore'
     ],
     autoScroll: true,
-    rootVisible: true,
+    rootVisible: false,
     store: {
         type: 'menutreestore'
     },

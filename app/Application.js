@@ -15,7 +15,7 @@ function loadLocale() {
 }
 loadLocale();
 
-
+localStorage.setItem("userLoggedIn", true);
 
 
 Ext.define('Xe.Application', {

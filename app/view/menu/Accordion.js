@@ -9,7 +9,7 @@ Ext.define('Xe.view.menu.Accordion', {
     collapsible: true,
     split: true,
     iconCls: 'fa fa-sitemap fa-lg',
-    title: translations.menu,
+    title: 'Menu',
     items: [{
         xtype: 'menutree'
     }]
