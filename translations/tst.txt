@@ -1,0 +1,53 @@
+function initApp() {
+    Ext.Ajax.request({
+        url: contextpath + '/preferences?getSchemeConfigs=&',
+        success: function(conn, response, options, eOpts) {
+            schemeConfigs = eval('(' + conn.responseText + ')');
+            schemeConfigs = schemeConfigs.data || {};
+        }
+    });
+    Ext.Ajax.request({
+        url: contextpath + '/preferences',
+        success: function(conn, response, options, eOpts) {
+            prefs = eval('(' + conn.responseText + ')');
+            prefs = prefs.data || {};
+        }
+    });
+    Ext.Ajax.request({
+        url: contextpath + '/schemes/isSchemeMultiCompany',
+        success: function(conn, response, options, eOpts) {
+            var company = eval('(' + conn.responseText + ')');
+            multiCompany = company.multiCompany;
+        }
+    });
+    Ext.Ajax.request({
+        url: contextpath + '/users?_eventName=currentUser',
+        success: function(conn, response, options, eOpts) {
+            var res = conn.responseText;
+            user = eval('(' + res + ')');
+            console.log(user.user);
+            if (!user.user) {
+                // window.location = user.url;
+                user.user = {};
+            }
+
+            //console.log(user.user.role);
+            if (user.user.role == 'admin') {
+                txDate = '2000-01-01';
+            } else {
+                txDated = new Date(new Date().setDate(new Date().getDate() - 1));
+                txDate = txDated.format('yyyy/mm/dd');
+            }
+
+        }
+    });
+    Ext.Ajax.request({
+        url: contextpath + '/users?_eventName=permissions',
+        success: function(conn, response, options, eOpts) {
+            var res = conn.responseText;
+            permissions = eval('(' + res + ')');
+        }
+    });
+    getClient();
+}
+

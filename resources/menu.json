@@ -1,0 +1,47 @@
+{
+    "data": [{
+            "id": "1",
+            "text": "Member Register",
+            "iconCls": "fa fa-group fa-lg",
+            "items": [{
+                    "id": "2",
+                    "text": "Sponsors",
+                    "iconCls": "xf0c0",
+                    "className": "panel",
+                    "menu_id": "1",
+                    "leaf": true
+                },
+                {
+                    "id": "3",
+                    "text": "Members",
+                    "iconCls": "xf007",
+                    "className": "member-view",
+                    "menu_id": "1",
+                    "leaf": true
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "text": "Administartion ",
+            "iconCls": "fa fa-group fa-lg",
+            "items": [{
+                    "id": "5",
+                    "text": "Existing Users Listing",
+                    "iconCls": "xf0c0",
+                    "className": "panel",
+                    "menu_id": "4",
+                    "leaf": true
+                },
+                {
+                    "id": "6",
+                    "text": "Profile Permissions",
+                    "iconCls": "xf007",
+                    "className": "panel",
+                    "menu_id": "4",
+                    "leaf": true
+                }
+            ]
+        }
+    ]
+}
